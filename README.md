@@ -1,74 +1,60 @@
 # Music Advisor
+Music Advisor is a Java application that connects with Spotify accounts using OAuth 2.0 to provide music recommendations, featured playlists, new releases, and various music categories.
 
-App connects with user Spotify accounts using OAuth 2.0.
-Available options:
-- auth
-- new
-- featured
-- categories
-- playlists \*id\*
-- prev
-- next
-- exit
+## Features
+Authorization: Authenticate and authorize the application with Spotify.
+New Releases: Get the latest music releases.
+Featured Playlists: Display Spotify's featured playlists.
+Categories: Browse various music categories.
+Playlists by Category: View playlists for a specific music category.
+Pagination: Navigate through multiple pages of results.
+Project Structure
+Classes and Their Functionality
 
-Options can be passed through args.
-Arguments: -page \*entries per single page\*
+## Client.java
 
-```
-> new
-Please, provide access for application.
+Handles the communication with the Spotify API.
+Makes HTTP requests to Spotify's endpoints and processes the responses.
+Uses the access token for authenticated requests.
 
-> auth
-use this link to request the access code:
-https://accounts.spotify.com/authorize?client_id=6e70a3870fbe4d4bae4982467b032a2f&redirect_uri=http://localhost:8080/&response_type=code
-waiting for code...
-code received
-making http request for access_token... 
-Success!
+## Config.java
 
-> categories
-Toplijsten
-2020 Wrapped
-Thuis
-Pop
-Stemming
----PAGE 1 OF 4---
+Stores configuration settings, such as the base URL for the Spotify API, client ID, client secret, and redirect URI.
+Manages the application’s configuration properties.
 
-> prev
-No more pages.
+## Main.java
 
-> next
-Decennia
-Hip Hop
-In de auto
-Gaming
-Wellness
----PAGE 2 OF 4---
+The entry point of the application.
+Handles user input and coordinates the flow of the program.
+Manages command-line interactions and executes user commands.
 
-> playlists gaming
-Top Gaming Tracks
-https://open.spotify.com/playlist/37i9dQZF1DWTyiBJ6yEqeu
+## ResponseFlag.java
 
-Nerding Around
-https://open.spotify.com/playlist/37i9dQZF1DX3YGn6btf5lC
+Represents the status of responses from the Spotify API.
+Manages the success and error states of API responses.
+Helps in handling different response scenarios effectively.
 
-Power Gaming
-https://open.spotify.com/playlist/37i9dQZF1DX6taq20FeuKj
+## Session.java
 
-Video Game Soundtracks
-https://open.spotify.com/playlist/37i9dQZF1DXdfOcg1fm0VG
+Manages the user session, including the access token and its expiration.
+Handles the OAuth 2.0 authorization flow.
+Stores session-related information and ensures the validity of the access token.
+Spotify API Integration and Authorization
 
-League of Legends Official Playlist
-https://open.spotify.com/playlist/37i9dQZF1DWVi45nh2EuPP
+## Spotify API Integration:
 
----PAGE 1 OF 3---
+The application interacts with Spotify’s Web API to fetch music data. It uses endpoints such as /new-releases, /featured-playlists, /categories, and /categories/{id}/playlists.
+The Client.java class handles the HTTP requests to these endpoints and processes the responses.
 
-> playlists in de auto
-Specified id doesn't exist
+## Authorization Process:
 
-> plelist gaming
-Invalid option. Try again.
+The Session.java class manages the OAuth 2.0 authorization process.
+It generates an authorization URL and opens it in the user's default web browser.
+After the user logs in and authorizes the application, Spotify redirects them to a specified URI with an authorization code.
+The application exchanges this code for an access token, which is then used by Client.java to make authenticated requests to the Spotify API.
 
-> exit
----GOODBYE!---
-```
+## Google Gson Integration
+Google Gson:
+The application uses the Gson library to parse JSON responses from the Spotify API.
+Gson converts JSON strings into Java objects, which can then be used within the application.
+This integration simplifies the process of handling and manipulating data received from Spotify.
