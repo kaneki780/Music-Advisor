@@ -2,7 +2,9 @@
 Music Advisor is a Java application that connects with Spotify accounts using OAuth 2.0 to provide music recommendations, featured playlists, new releases, and various music categories.
 
 # Features
-## Authorization: Authenticate and authorize the application with Spotify.
+## Authorization
+Authenticate and authorize the application with Spotify.
+
 ![Screenshot 2024-07-06 084216](https://github.com/kaneki780/Music-Advisor/assets/111025359/39d2d8b1-d426-44fa-8e92-ac4543a6c985)
 
 ![Screenshot 2024-07-06 084244](https://github.com/kaneki780/Music-Advisor/assets/111025359/2ab563bc-f683-4346-b1e0-c2aec431203a)
@@ -12,12 +14,28 @@ Music Advisor is a Java application that connects with Spotify accounts using OA
 ![Screenshot 2024-07-06 084304](https://github.com/kaneki780/Music-Advisor/assets/111025359/9c058356-ce8c-49e9-a103-15d3bbf5c65b)
 
 New Releases: Get the latest music releases.
+
+![Screenshot 2024-07-06 084432](https://github.com/kaneki780/Music-Advisor/assets/111025359/36c0439a-b5eb-4713-be30-6cf997b91644)
+
 Featured Playlists: Display Spotify's featured playlists.
+
+![Screenshot 2024-07-06 084547](https://github.com/kaneki780/Music-Advisor/assets/111025359/bb769bfa-c5d1-409b-83fc-096579e85a32)
+
 Categories: Browse various music categories.
+
+![Screenshot 2024-07-06 084944](https://github.com/kaneki780/Music-Advisor/assets/111025359/701727ec-3c1a-493c-888f-f9b87fa871c3)
+
 Playlists by Category: View playlists for a specific music category.
+
 Pagination: Navigate through multiple pages of results.
-Project Structure
-Classes and Their Functionality
+
+![Screenshot 2024-07-06 084547](https://github.com/kaneki780/Music-Advisor/assets/111025359/42218da5-289d-468a-86c8-0b2bf928b828)
+
+![Screenshot 2024-07-06 084602](https://github.com/kaneki780/Music-Advisor/assets/111025359/48e7ae1f-cc35-4fea-ba30-259e005239d4)
+
+# Project Structure
+
+## Classes and Their Functionality
 
 ## Client.java
 
